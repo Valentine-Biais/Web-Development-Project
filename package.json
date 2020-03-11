@@ -1,0 +1,17 @@
+{
+    "name": "web-developement",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "parcel index.html",
+      "build": "parcel build index.html",
+      "predeploy": "npm run build",
+      "deploy": "surge valentine-victor.surge.sh"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "axios": "^0.19.2"
+    }
+  }
