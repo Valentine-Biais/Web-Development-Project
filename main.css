@@ -1,18 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
 
 
-html, body, div, applet, h1, p, a, em, ol, ul {
+html, body, div, applet, .wave-container, 
+h1, h2, p, p2, a, em, ol, ul {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+    vertical-align: baseline;}
+    
 
 /* Basic */
 
 	html {
-		box-sizing: border-box;
+        box-sizing: border-box;
 	}
 
 	*, *:before, *:after {
@@ -20,12 +22,53 @@ html, body, div, applet, h1, p, a, em, ol, ul {
 	}
 
 	body {
-        background: #1b1f22;
-        background:linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)),url(https://parismatch.be/app/uploads/2019/05/icons8-team-643415-unsplash.jpg);
+        background: #ffffff;        
         background-size: auto,cover;
         margin:0;
         background-repeat:no-repeat;
     }
+
+    section{
+        position: relative;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)),url(https://outlierventures.io/wp-content/uploads/2019/05/AdobeStock_244536662.jpeg);
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+    }
+
+    @keyframes animateWave {
+        0% {
+          transform: scale(1,0);
+        }
+        100% {
+          transform: scale(1,1);
+        }
+    }
+
+    @keyframes up {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-1rem);
+        }
+    }
+
+    #curve{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        transform-origin: bottom;
+        animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    }
+
+    
     
 
 /* Type */
@@ -64,6 +107,11 @@ html, body, div, applet, h1, p, a, em, ol, ul {
 
 	p {
 		margin: 0 0 2rem 0;
+    }
+    
+    p2 {
+        color: #010E18;
+		margin: 0 0 2rem 0;
 	}
 
 	h1 {
@@ -79,7 +127,22 @@ html, body, div, applet, h1, p, a, em, ol, ul {
 		font-size: 2.25rem;
 		line-height: 1.3;
 		letter-spacing: 0.5rem;
-	}
+    }
+    
+    h2 {
+		color: #010E18;
+		font-weight: 600;
+		line-height: 1.5;
+		margin: 0 0 1rem 0;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+    }
+    
+    h2 {
+		font-size: 2.25rem;
+		line-height: 1.3;
+		letter-spacing: 0.5rem;
+    }
     
 
 /* Wrapper */
@@ -204,8 +267,7 @@ html, body, div, applet, h1, p, a, em, ol, ul {
 
 					#header nav ul li a:active {
 						background-color: rgba(255, 255, 255, 0.175);
-					}
-
+                    }
 
 /* Footer */
 
@@ -221,7 +283,7 @@ html, body, div, applet, h1, p, a, em, ol, ul {
 			letter-spacing: 0.2rem;
 			font-size: 0.6rem;
 			opacity: 0.75;
-			margin-bottom: 0;
+			margin-bottom: 4rem;
 			text-transform: uppercase;
 		}
 
@@ -233,4 +295,146 @@ html, body, div, applet, h1, p, a, em, ol, ul {
 
 		body.is-preload #footer {
 			opacity: 0;
-		}
+        }
+        
+        
+
+    
+/* Section 2 */
+    section.intro-section{
+        position: relative;
+        width: 100%;
+        height: 90vh;
+        background: #ffffff;
+        margin-top: 2rem;
+    }
+
+            section.intro-section .container{
+                width: 100%;
+                max-width: 122.5rem;
+                margin: 0 auto;
+                padding: 0 2.4rem;
+                margin-top: 1rem;
+            }
+
+            section.intro-section .intro-description{
+                display: flex;
+                align-items: center;
+            }
+
+            section.intro-section .intro-description > div{
+                flex: 1;
+            }
+
+                section.intro-section .content {
+                    border-style: solid;
+                    border-color: #ffffff;
+                    border-top-width: 1px;
+                    border-bottom-width: 1px;
+                    max-width: 100%;
+                    text-align: center;
+                }
+
+                    section.intro-section .content .inner {
+                        transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
+                        padding: 3rem 2rem;
+                        max-height: 40rem;
+                        overflow: hidden;
+                    }
+
+                        section.intro-section .content .inner > :last-child {
+                            margin-bottom: 0;
+                        }
+
+                    section.intro-section .content p2 {
+                        text-transform: uppercase;
+                        letter-spacing: 0.2rem;
+                        font-size: 0.8rem;
+                        line-height: 2;
+                    }
+
+        section.intro-section img {
+            width: 100%;        
+        }
+
+        section.intro-section .pad-marg {            
+            padding-right: 6rem;
+            margin-left: 10rem;
+        }
+                    
+        section.intro-section .image-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1.5rem;
+        }
+
+/* footer 2 */
+
+    footer.footer2 {
+        padding: 4rem 0;
+        background-color: #010E18;
+        color: #fff;
+        text-align: center;
+        position: relative;
+    }
+
+    footer.footer2 .back-to-top{
+        width: 7rem;
+        height: 7rem;
+        background-color: #010E18;
+        position: absolute;
+        top: -3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50%;
+    }
+
+    footer.footer2 .back-to-top i{
+        display: block;
+        color: #fff;
+        font-size: 2rem;
+        padding: 2rem;
+        animation: up 1.4s infinite;
+    }
+
+    footer.footer2 .footer-content {
+        max-width: 50rem;
+        margin: auto;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 0.8rem;
+        line-height: 2;
+    }
+
+    footer.footer2 .newsletter-container {
+        margin-top: 4rem;
+    }
+
+    footer.footer2 .newsletter-form {
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    footer.footer2 .newsletter-input {
+        width: 100%;
+        max-width: 25rem;
+        padding: 1rem;
+        border-radius: .4rem;
+        color: #010E18;
+    }
+
+    footer.footer2 .newsletter-btn {
+        background-color: transparent;
+        border: none;
+        color: #010E18;
+        cursor: pointer;
+        font-size: 1.6rem;
+        padding: 1px .6rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 10.5rem;
+    }
+
