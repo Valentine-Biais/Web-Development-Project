@@ -15,6 +15,7 @@ h1, h2, p, p2, a, em, ol, ul {
 
 	html {
         box-sizing: border-box;
+        scroll-behavior: smooth;
 	}
 
 	*, *:before, *:after {
