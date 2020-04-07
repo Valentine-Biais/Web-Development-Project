@@ -1,20 +1,23 @@
-const sr = ScrollReveal();
+import ScrollReveal from 'scrollreveal'
+import $ from 'jquery'
+import axios from 'axios'
 
-sr.reveal('section.intro-section .animate-left', {
+
+ScrollReveal().reveal('section.intro-section .animate-left', {
     origin: 'left',
     duration: 1000,
     distance: '25rem',
     delay: 300
 });
 
-sr.reveal('.animate-top', {
+ScrollReveal().reveal('.animate-top', {
     origin: 'top',
     duration: 1000,
     distance: '25rem',
     delay: 600
 });
 
-sr.reveal('.animate-bottom', {
+ScrollReveal().reveal('.animate-bottom', {
     origin: 'bottom',
     duration: 1000,
     distance: '25rem',
@@ -29,23 +32,33 @@ $("nav").find("a").click(function(e) {
     });
 });
 
-app.use(app.router);
 
-app.use(function(req, res, next){
-  res.status(404);
 
-  // respond with html page
-  if (req.accepts('html')) {
-    res.render('404', { url: req.url });
-    return;
-  }
+const sendData = (user) => {
+    axios.post('https://reqres.in/api/user', user)
+        .then(response => {
+            $("#foo")[0].reset();
+            const addedUser = response.data;
+            console.log(`POST: user is added`, addedUser);
+            // append to DOM
+            appendToDOM([addedUser]);
+        })
+        .catch(error => {
+            console.log(error.response)
+        })
+};
 
-  // respond with json
-  if (req.accepts('json')) {
-    res.send({ error: 'Not found' });
-    return;
-  }
+const form = document.querySelector('form');
 
-  // default to plain-text. send()
-  res.type('txt').send('Not found');
+const formEvent = form.addEventListener('submit', event => {
+    event.preventDefault();
+
+    const email = document.querySelector('#email').value;
+    const password = ' '
+
+    const user = {email, password};
+    sendData(user);
 });
+
+
+
