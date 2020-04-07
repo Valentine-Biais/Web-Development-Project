@@ -2,7 +2,7 @@
 
 ## Victor LARREZET & Valentine BIAIS's project - IF7
 
-*Surge address:* [valentine-victor.surge.sh](https://valentine-victor.surge.sh)
+Surge address: [valentine-victor.surge.sh](https://valentine-victor.surge.sh)
 
 - [x] Work on responsive
 - [x] Icon position
