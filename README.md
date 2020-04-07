@@ -1,6 +1,6 @@
 # Web-Development-Project
 
-## Victor LARREZET & Valentine BIAIS's project - IF7
+## Victor LARREZET & Valentine BIAIS Project - IF7
 
 Surge address: [valentine-victor.surge.sh](https://valentine-victor.surge.sh)
 
